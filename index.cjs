@@ -514,4 +514,15 @@ client.on('interactionCreate', async interaction => {
 // ------------------------------------------------------------------------------
 // 9. CONNEXION FINALE
 // ------------------------------------------------------------------------------
-client.login(process.env.TOKEN);
+client.login(process.env.DISCORD_TOKEN);
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+    res.send('Le bot est en ligne !');
+});
+
+app.listen(PORT, () => {
+    console.log(`Serveur web prêt sur le port ${PORT}`);
+});
