@@ -161,7 +161,7 @@ client.once('ready', async () => {
             { name: 'slowmode', description: 'Mode lent', options: [{ name: 'secondes', description: 'Secondes', type: 4, required: true }] }
         ];
 
-        const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+        const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
         await rest.put(Routes.applicationCommands(client.user.id), { body: commands });
         console.log('✅ Commandes globales synchronisées.');
     } catch (error) {
