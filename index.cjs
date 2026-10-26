@@ -365,7 +365,7 @@ client.on('interactionCreate', async interaction => {
         const xp = databaseXP.get(target.id);
         const eco = databaseEco.getCoins(target.id);
         const embed = new EmbedBuilder()
-            .setColor(prof.themeColor)
+           .setColor(prof.themeColor || '#5865F2')
             .setTitle(`🎮 Profil : ${target.user.username}`)
             .setThumbnail(target.user.displayAvatarURL({ dynamic: true }))
             .addFields(
